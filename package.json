@@ -1,0 +1,23 @@
+{
+  "name": "yet-another-todo-app",
+  "version": "1.0.0",
+  "description": "To-do app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svats1/yet-another-todo-app.git"
+  },
+  "author": "svats",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/svats1/yet-another-todo-app/issues"
+  },
+  "homepage": "https://github.com/svats1/yet-another-todo-app#readme",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
