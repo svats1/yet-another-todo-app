@@ -14,15 +14,7 @@
 
 //
 
-// import { Task } from "./task";
-
-class Task {
-  constructor(title, date, done) {
-    this.title = title;
-    this.date = date;
-    this.done = done;
-  }
-}
+import Task, { consoler } from "./task";
 
 const task1 = new Task();
 
@@ -31,3 +23,5 @@ task1.date = "02-14-2023";
 task1.done = false;
 
 console.log(task1);
+
+consoler();
