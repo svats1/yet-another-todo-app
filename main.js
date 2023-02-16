@@ -1,1 +1,1 @@
-(()=>{"use strict";const t=new class{constructor(t,e,s){this.title=t,this.date=e,this.done=s}};t.title="Get shit done",t.date="02-14-2023",t.done=!1,console.log(t)})();
+(()=>{"use strict";const t=new class{constructor(t,s,e){this.title=t,this.date=s,this.done=e}};t.title="Get shit done",t.date="02-14-2023",t.done=!1,console.log(t);const s=new class{constructor(t){this.name=t}};s.name="Project 1",console.log(s)})();
