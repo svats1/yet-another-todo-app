@@ -3,3 +3,5 @@ export default class Project {
     this.name = name;
   }
 }
+
+// Project.prototype = Object.create({ name: "Samarth", age: "32" });
