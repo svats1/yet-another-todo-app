@@ -14,6 +14,7 @@
 
 //
 
+import Project from "./project";
 import Task from "./task";
 
 const task1 = new Task();
@@ -23,3 +24,9 @@ task1.date = "02-14-2023";
 task1.done = false;
 
 console.log(task1);
+
+const project1 = new Project();
+
+project1.name = "Project 1";
+
+console.log(project1);
