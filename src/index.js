@@ -14,7 +14,7 @@
 
 //
 
-import Task, { consoler } from "./task";
+import Task from "./task";
 
 const task1 = new Task();
 
@@ -23,5 +23,3 @@ task1.date = "02-14-2023";
 task1.done = false;
 
 console.log(task1);
-
-consoler();

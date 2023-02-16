@@ -5,7 +5,3 @@ export default class Task {
     this.done = done;
   }
 }
-
-export function consoler() {
-  console.log("test4");
-}
