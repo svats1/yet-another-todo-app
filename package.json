@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "yet-another-todo-app",
   "version": "1.0.0",
   "description": "To-do app",

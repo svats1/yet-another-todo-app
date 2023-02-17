@@ -13,9 +13,11 @@
 // Make task a child of project
 
 //
-import "./style.css";
-import Project from "./project";
-import Task from "./task";
+// import "./style.css";
+// import Project from "./project";
+// import Task from "./task";
+
+import { Task } from "./task.js";
 
 const task1 = new Task();
 
@@ -23,15 +25,15 @@ task1.title = "Get shit done";
 task1.date = "02-14-2023";
 task1.done = false;
 
-console.log(task1.prototype);
+console.log(task1);
 
-const project1 = new Project();
+// const project1 = new Project();
 
-project1.name = "Project 1";
+// project1.name = "Project 1";
 
-Object.assign(Task.prototype, Project);
+// Object.assign(Task.prototype, Project);
 
-console.log(project1.prototype);
+// console.log(project1.prototype);
 
 // Project.prototype = Object.create(task1);
 
