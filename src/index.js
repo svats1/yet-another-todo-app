@@ -7,13 +7,9 @@
 // A way to manage user access, multiple users
 //
 
-// Approach
-// Write a task object class
-// Write a project object class
-// Make task a child of project
-
 //
 import "./style.css";
+import { createProject, createTask } from "./create-dom-elements";
 // import Project from "./project";
 // import Task from "./task";
 
@@ -35,10 +31,19 @@ task1.done = false;
 
 console.log(task1);
 
-// const newProject = document.querySelector(".add-new");
-// newProject.addEventListener("click", () => {
-//   console.log("test");
-// });
+const projectContainer = document.querySelector(".project-container");
+const taskContainer = document.querySelector(".task-container");
+
+const newProject = document.querySelector(".add-new-project");
+const newTask = document.querySelector(".add-new-task");
+
+newProject.addEventListener("click", () => {
+  projectContainer.appendChild(createProject());
+});
+
+newTask.addEventListener("click", () => {
+  taskContainer.appendChild(createTask());
+});
 
 // const project1 = new Project();
 
