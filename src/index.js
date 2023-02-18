@@ -23,17 +23,23 @@ const newTask = document.querySelector(".add-new-task");
 //
 
 function createProject() {
-  // Instantiate new Project
-  const project1 = new Project(prompt("Project name?"));
-  // Create project DOM node
-  projectContainer.appendChild(project1.createDiv());
+  const projectName = prompt("Project name?");
+  if (!!projectName) {
+    // Instantiate new Project
+    const project1 = new Project();
+    // Create project DOM node
+    projectContainer.appendChild(project1.createDiv());
+  }
 }
 
 function createTask() {
-  // Instantiate new task
-  const task1 = new Task(prompt("Task Name?"));
-  // Create task DOM node
-  taskContainer.appendChild(task1.createDiv());
+  const taskName = prompt("Task Name?");
+  if (!!taskName) {
+    // Instantiate new task
+    const task1 = new Task(taskName);
+    // Create task DOM node
+    taskContainer.appendChild(task1.createDiv());
+  }
 }
 
 //

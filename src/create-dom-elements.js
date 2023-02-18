@@ -1,13 +1,14 @@
 const projectContainer = document.querySelector(".project-container");
 const taskContainer = document.querySelector(".task-container");
 
-export const projectList = [];
-export const taskList = [];
+// export const projectList = [];
+// export const taskList = [];
 
 export class Project {
   constructor(name) {
     this.name = name;
-    projectList.push(this);
+    this.taskList = [];
+    // projectList.push(this);
   }
   createDiv() {
     const projectDiv = document.createElement("div");
@@ -19,7 +20,7 @@ export class Project {
 
     delProject.addEventListener("click", () => {
       projectContainer.removeChild(projectDiv);
-      projectList.splice(projectList.indexOf(projectDiv), 1);
+      //   projectList.splice(projectList.indexOf(projectDiv), 1);
     });
 
     projectDiv.appendChild(delProject);
@@ -31,7 +32,7 @@ export class Project {
 export class Task {
   constructor(name) {
     this.name = name;
-    taskList.push(this);
+    // taskList.push(this);
   }
   createDiv() {
     const taskDiv = document.createElement("div");
@@ -49,7 +50,7 @@ export class Task {
 
     delTask.addEventListener("click", () => {
       taskContainer.removeChild(taskDiv);
-      taskList.splice(taskList.indexOf(taskDiv), 1);
+      //   taskList.splice(taskList.indexOf(taskDiv), 1);
     });
 
     checkTask.addEventListener("click", () => {
