@@ -1,1 +1,0 @@
-(()=>{"use strict";const t=new class{constructor(t,e,s){this.title=t,this.date=e,this.done=s}};t.title="Get shit doness",t.date="02-14-2023",t.done=!1,console.log(t),document.querySelector(".add-new .project").addEventListener("click",(()=>{console.log("test")}))})();

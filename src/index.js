@@ -13,7 +13,7 @@
 // Make task a child of project
 
 //
-// import "./style.css";
+import "./style.css";
 // import Project from "./project";
 // import Task from "./task";
 
@@ -35,10 +35,10 @@ task1.done = false;
 
 console.log(task1);
 
-const newProject = document.querySelector(".add-new");
-newProject.addEventListener("click", () => {
-  console.log("test");
-});
+// const newProject = document.querySelector(".add-new");
+// newProject.addEventListener("click", () => {
+//   console.log("test");
+// });
 
 // const project1 = new Project();
 
