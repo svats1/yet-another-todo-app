@@ -1,7 +1,20 @@
+const projectContainer = document.querySelector(".project-container");
+const taskContainer = document.querySelector(".task-container");
+
 export function createProject() {
   const projectDiv = document.createElement("div");
+  const delProject = document.createElement("button");
+
   projectDiv.className = "project";
   projectDiv.textContent = "New Project";
+  delProject.textContent = "X";
+
+  projectDiv.appendChild(delProject);
+
+  delProject.addEventListener("click", () => {
+    projectContainer.removeChild(projectDiv);
+  });
+
   return projectDiv;
 }
 
@@ -21,6 +34,10 @@ export function createTask() {
   taskDiv.appendChild(inputTask);
   taskDiv.appendChild(delTask);
   taskDiv.appendChild(checkTask);
+
+  delTask.addEventListener("click", () => {
+    taskContainer.removeChild(taskDiv);
+  });
 
   return taskDiv;
 }
