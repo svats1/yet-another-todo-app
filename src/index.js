@@ -11,22 +11,22 @@
 
 import "./style.css";
 import {
-  createProject,
   createTask,
   projectList,
   taskList,
+  Project,
 } from "./create-dom-elements";
 
 // import Project from "./project";
-import Task from "./task";
+// import Task from "./task";
 
-const task1 = new Task();
+// const task1 = new Task();
 
-task1.title = "Get shit doness";
-task1.date = "02-14-2023";
-task1.done = false;
+// task1.title = "Get shit doness";
+// task1.date = "02-14-2023";
+// task1.done = false;
 
-console.log(task1);
+// console.log(task1);
 
 //
 
@@ -37,13 +37,17 @@ const newProject = document.querySelector(".add-new-project");
 const newTask = document.querySelector(".add-new-task");
 
 newProject.addEventListener("click", () => {
-  projectContainer.appendChild(createProject());
+  //   const name = prompt("Project name?");
+  const project1 = new Project(prompt("Project name?"));
+  console.log(project1);
+
+  projectContainer.appendChild(project1.createDiv());
   console.log(projectList);
 });
 
-newTask.addEventListener("click", () => {
-  taskContainer.appendChild(createTask());
-  console.log(taskList);
-});
+// newTask.addEventListener("click", () => {
+//   taskContainer.appendChild(createTask());
+//   console.log(taskList);
+// });
 
 //
