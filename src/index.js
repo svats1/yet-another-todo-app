@@ -10,7 +10,13 @@
 //
 
 import "./style.css";
-import { createProject, createTask } from "./create-dom-elements";
+import {
+  createProject,
+  createTask,
+  projectList,
+  taskList,
+} from "./create-dom-elements";
+
 // import Project from "./project";
 import Task from "./task";
 
@@ -32,8 +38,12 @@ const newTask = document.querySelector(".add-new-task");
 
 newProject.addEventListener("click", () => {
   projectContainer.appendChild(createProject());
+  console.log(projectList);
 });
 
 newTask.addEventListener("click", () => {
   taskContainer.appendChild(createTask());
+  console.log(taskList);
 });
+
+//
