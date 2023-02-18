@@ -10,23 +10,7 @@
 //
 
 import "./style.css";
-import {
-  createTask,
-  projectList,
-  taskList,
-  Project,
-} from "./create-dom-elements";
-
-// import Project from "./project";
-// import Task from "./task";
-
-// const task1 = new Task();
-
-// task1.title = "Get shit doness";
-// task1.date = "02-14-2023";
-// task1.done = false;
-
-// console.log(task1);
+import { Project, Task, projectList, taskList } from "./create-dom-elements";
 
 //
 
@@ -36,18 +20,30 @@ const taskContainer = document.querySelector(".task-container");
 const newProject = document.querySelector(".add-new-project");
 const newTask = document.querySelector(".add-new-task");
 
-newProject.addEventListener("click", () => {
-  //   const name = prompt("Project name?");
-  const project1 = new Project(prompt("Project name?"));
-  console.log(project1);
+//
 
+function createProject() {
+  // Instantiate new Project
+  const project1 = new Project(prompt("Project name?"));
+  // Create project DOM node
   projectContainer.appendChild(project1.createDiv());
-  console.log(projectList);
+}
+
+function createTask() {
+  // Instantiate new task
+  const task1 = new Task(prompt("Task Name?"));
+  // Create task DOM node
+  taskContainer.appendChild(task1.createDiv());
+}
+
+//
+
+newProject.addEventListener("click", () => {
+  createProject();
 });
 
-// newTask.addEventListener("click", () => {
-//   taskContainer.appendChild(createTask());
-//   console.log(taskList);
-// });
+newTask.addEventListener("click", () => {
+  createTask();
+});
 
 //
