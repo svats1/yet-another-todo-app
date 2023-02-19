@@ -1,9 +1,6 @@
 const projectContainer = document.querySelector(".project-container");
 const taskContainer = document.querySelector(".task-container");
 
-// export const projectList = [];
-// export const taskList = [];
-
 export class Project {
   constructor(name) {
     this.name = name;
@@ -27,18 +24,18 @@ export class Project {
 
     return projectDiv;
   }
-  addTask(taskName) {
-    const task = new Task(taskName);
+  addTask(task) {
     this.taskList.push(task);
   }
-  removeTask(taskName) {
-    this.taskList.splice(this.taskList.indexOf(taskName), 1);
+  removeTask(task) {
+    this.taskList.splice(this.taskList.indexOf(task), 1);
   }
 }
 
 export class Task {
   constructor(name) {
     this.name = name;
+    this.alive = true;
   }
   createDiv() {
     const taskDiv = document.createElement("div");
@@ -55,6 +52,12 @@ export class Task {
     inputTask.textContent = this.name;
     delTask.textContent = "X";
 
+    delTask.addEventListener("click", () => {
+      taskContainer.removeChild(taskDiv);
+      this.alive = false;
+      //   console.log(this.name);
+    });
+
     checkTask.addEventListener("click", () => {
       if (checkTask.checked === true) {
         inputTask.style.textDecoration = "line-through";
@@ -69,13 +72,7 @@ export class Task {
 
     return taskDiv;
   }
-  deleteTask() {
-    delTask.addEventListener("click", () => {
-      taskContainer.removeChild(taskDiv);
-
-      //   taskList.splice(taskList.indexOf(taskDiv), 1);
-    });
-  }
+  deleteTask() {}
 }
 
 // export function createProject() {

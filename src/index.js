@@ -51,6 +51,7 @@ newProject.addEventListener("click", () => {
     // Create project DOM node
     projectContainer.appendChild(project1.createDiv());
     //
+
     newTask.addEventListener("click", () => {
       const taskName = prompt("Task Name?");
       if (!!taskName) {
@@ -58,8 +59,15 @@ newProject.addEventListener("click", () => {
         const task1 = new Task(taskName);
         // Create task DOM node
         taskContainer.appendChild(task1.createDiv());
-        project1.addTask(task1.name);
-        //
+        // Add to project list
+        project1.addTask(task1);
+      }
+      // See if any task has been deleted
+      for (const i in project1.taskList) {
+        // console.log(project1.taskList[i].alive);
+        if (project1.taskList[i].alive === false) {
+          project1.taskList.splice(i, 1);
+        }
       }
       console.log(project1.taskList);
     });
