@@ -27,12 +27,18 @@ export class Project {
 
     return projectDiv;
   }
+  addTask(taskName) {
+    const task = new Task(taskName);
+    this.taskList.push(task);
+  }
+  removeTask(taskName) {
+    this.taskList.splice(this.taskList.indexOf(taskName), 1);
+  }
 }
 
 export class Task {
   constructor(name) {
     this.name = name;
-    // taskList.push(this);
   }
   createDiv() {
     const taskDiv = document.createElement("div");
@@ -42,16 +48,12 @@ export class Task {
 
     inputTask.className = "input-task";
     checkTask.className = "check-task";
+    delTask.className = "delete-task";
     taskDiv.className = "task";
 
     checkTask.type = "checkbox";
     inputTask.textContent = this.name;
     delTask.textContent = "X";
-
-    delTask.addEventListener("click", () => {
-      taskContainer.removeChild(taskDiv);
-      //   taskList.splice(taskList.indexOf(taskDiv), 1);
-    });
 
     checkTask.addEventListener("click", () => {
       if (checkTask.checked === true) {
@@ -66,6 +68,13 @@ export class Task {
     taskDiv.appendChild(checkTask);
 
     return taskDiv;
+  }
+  deleteTask() {
+    delTask.addEventListener("click", () => {
+      taskContainer.removeChild(taskDiv);
+
+      //   taskList.splice(taskList.indexOf(taskDiv), 1);
+    });
   }
 }
 

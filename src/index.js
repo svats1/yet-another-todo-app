@@ -22,34 +22,73 @@ const newTask = document.querySelector(".add-new-task");
 
 //
 
-function createProject() {
-  const projectName = prompt("Project name?");
-  if (!!projectName) {
-    // Instantiate new Project
-    const project1 = new Project();
-    // Create project DOM node
-    projectContainer.appendChild(project1.createDiv());
-  }
-}
+// function createProject(projectName) {
+//   if (!!projectName) {
+//     // Instantiate new Project
+//     const project1 = new Project(projectName);
+//     // Create project DOM node
+//     projectContainer.appendChild(project1.createDiv());
+//   }
+// }
 
-function createTask() {
-  const taskName = prompt("Task Name?");
-  if (!!taskName) {
-    // Instantiate new task
-    const task1 = new Task(taskName);
-    // Create task DOM node
-    taskContainer.appendChild(task1.createDiv());
-  }
-}
+// function createTask(taskName) {
+//   if (!!taskName) {
+//     // Instantiate new task
+//     const task1 = new Task(taskName);
+//     // Create task DOM node
+//     taskContainer.appendChild(task1.createDiv());
+//   }
+// }
 
 //
 
 newProject.addEventListener("click", () => {
-  createProject();
+  const projectName = prompt("Project name?");
+  taskContainer.innerHTML = "";
+  if (!!projectName) {
+    // Instantiate new Project
+    const project1 = new Project(projectName);
+    // Create project DOM node
+    projectContainer.appendChild(project1.createDiv());
+    //
+    newTask.addEventListener("click", () => {
+      const taskName = prompt("Task Name?");
+      if (!!taskName) {
+        // Instantiate new task
+        const task1 = new Task(taskName);
+        // Create task DOM node
+        taskContainer.appendChild(task1.createDiv());
+        project1.addTask(task1.name);
+        //
+      }
+      console.log(project1.taskList);
+    });
+  }
 });
 
-newTask.addEventListener("click", () => {
-  createTask();
-});
+// newProject.addEventListener("click", () => {
+//   const projectName = prompt("Project name?");
+
+//   if (!!projectName) {
+//     // Instantiate new Project
+//     const project1 = new Project(projectName);
+//     // Create project DOM node
+//     projectContainer.appendChild(project1.createDiv());
+//   }
+//   //   createProject(projectName);
+//   taskContainer.innerHTML = "";
+// });
+
+// newTask.addEventListener("click", () => {
+//   const taskName = prompt("Task Name?");
+
+//   if (!!taskName) {
+//     // Instantiate new task
+//     const task1 = new Task(taskName);
+//     // Create task DOM node
+//     taskContainer.appendChild(task1.createDiv());
+//   }
+//   //   createTask(taskName);
+// });
 
 //
