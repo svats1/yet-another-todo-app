@@ -1,7 +1,5 @@
 export default class Task {
-  constructor(title, date, done) {
-    this.title = title;
-    this.date = date;
-    this.done = done;
+  constructor(name) {
+    this.name = name;
   }
 }
