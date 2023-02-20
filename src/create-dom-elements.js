@@ -4,6 +4,7 @@ const taskContainer = document.querySelector(".task-container");
 export class Project {
   constructor(name) {
     this.name = name;
+    this.alive = true;
     this.taskList = [];
     // projectList.push(this);
   }
@@ -17,6 +18,7 @@ export class Project {
 
     delProject.addEventListener("click", () => {
       projectContainer.removeChild(projectDiv);
+      this.alive = false;
       //   projectList.splice(projectList.indexOf(projectDiv), 1);
     });
 

@@ -10,7 +10,7 @@
 //
 
 import "./style.css";
-import { Project, Task, projectList, taskList } from "./create-dom-elements";
+import { Project, Task } from "./create-dom-elements";
 
 //
 
@@ -20,6 +20,7 @@ const taskContainer = document.querySelector(".task-container");
 const newProject = document.querySelector(".add-new-project");
 const newTask = document.querySelector(".add-new-task");
 
+let projectList = [];
 //
 
 // function createProject(projectName) {
@@ -48,6 +49,7 @@ newProject.addEventListener("click", () => {
   if (!!projectName) {
     // Instantiate new Project
     const project1 = new Project(projectName);
+    projectList.push(project1);
     // Create project DOM node
     projectContainer.appendChild(project1.createDiv());
     //
@@ -64,14 +66,19 @@ newProject.addEventListener("click", () => {
       }
       // See if any task has been deleted
       for (const i in project1.taskList) {
-        // console.log(project1.taskList[i].alive);
         if (project1.taskList[i].alive === false) {
           project1.taskList.splice(i, 1);
         }
       }
-      console.log(project1.taskList);
     });
   }
+  //   See if a project has been deleted
+  for (const i in projectList) {
+    if (projectList[i].alive === false) {
+      projectList.splice(i, 1);
+    }
+  }
+  console.log(projectList);
 });
 
 // newProject.addEventListener("click", () => {
