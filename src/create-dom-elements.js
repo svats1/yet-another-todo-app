@@ -1,33 +1,39 @@
 import Project from "./project";
 import Task from "./task";
 
-let projectList = [];
+export let projectList = [];
 
-const newProject = document.querySelector(".add-new-project");
-const newTask = document.querySelector(".add-new-task");
+export const newProject = document.querySelector(".add-new-project");
+export const newTask = document.querySelector(".add-new-task");
+
+const projectContainer = document.querySelector(".project-container");
+const taskContainer = document.querySelector(".task-container");
 
 let currentProject;
 
 newProject.addEventListener("click", () => {
+  //
+  taskContainer.innerHTML = "";
+  //
   currentProject = new Project(prompt("Project Name?"));
   if (!!currentProject.name) {
     projectList.push(currentProject);
+    const currentProjectNode = currentProject.render();
+    currentProjectNode.addEventListener("click", () => {
+      console.log("test");
+    });
   }
-  currentProject.render();
 });
 
 newTask.addEventListener("click", () => {
   const task1 = new Task(prompt("Task Name?"));
   if (!!task1.name) {
     currentProject.addTask(task1);
+    task1.render();
   }
-  task1.render();
   // console.log(currentProject.taskList);
   console.log(projectList);
 });
-
-// const projectContainer = document.querySelector(".project-container");
-// const taskContainer = document.querySelector(".task-container");
 
 // import Task from "./task";
 // import Project from "./project";

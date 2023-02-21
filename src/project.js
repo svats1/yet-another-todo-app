@@ -1,4 +1,5 @@
 const projectContainer = document.querySelector(".project-container");
+const taskContainer = document.querySelector(".task-container");
 
 export default class Project {
   constructor(name) {
@@ -28,7 +29,7 @@ export default class Project {
 
     this.div = projectDiv;
 
-    // return projectDiv;
+    return projectDiv;
   }
 }
 

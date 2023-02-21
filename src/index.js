@@ -11,6 +11,10 @@
 
 import "./style.css";
 import "./create-dom-elements";
+import { currentProject, projectList } from "./create-dom-elements";
+
+console.log(projectList);
+
 // import { Project, Task } from "./create-dom-elements";
 
 // newProject.addEventListener("click", () => {
