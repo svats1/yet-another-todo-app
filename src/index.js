@@ -10,35 +10,8 @@
 //
 
 import "./style.css";
+import "./create-dom-elements";
 // import { Project, Task } from "./create-dom-elements";
-import Project from "./project";
-import Task from "./task";
-
-// const projectContainer = document.querySelector(".project-container");
-// const taskContainer = document.querySelector(".task-container");
-
-let projectList = [];
-
-const newProject = document.querySelector(".add-new-project");
-const newTask = document.querySelector(".add-new-task");
-
-let currentProject;
-
-newProject.addEventListener("click", () => {
-  currentProject = new Project(prompt("Project Name?"));
-  if (!!currentProject.name) {
-    projectList.push(currentProject);
-  }
-});
-
-newTask.addEventListener("click", () => {
-  const task1 = new Task(prompt("Task Name?"));
-  if (!!task1.name) {
-    currentProject.addTask(task1);
-  }
-  console.log(currentProject.taskList);
-  console.log(projectList);
-});
 
 // newProject.addEventListener("click", () => {
 //   const projectName = prompt("Project name?");

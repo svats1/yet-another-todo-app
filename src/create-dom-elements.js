@@ -1,55 +1,84 @@
-const projectContainer = document.querySelector(".project-container");
-const taskContainer = document.querySelector(".task-container");
-
-import Task from "./task";
 import Project from "./project";
+import Task from "./task";
 
-export function createProjectDiv() {
-  const projectDiv = document.createElement("div");
-  const delProject = document.createElement("button");
+let projectList = [];
 
-  projectDiv.className = "project";
-  projectDiv.textContent = "New Project";
-  delProject.textContent = "X";
+const newProject = document.querySelector(".add-new-project");
+const newTask = document.querySelector(".add-new-task");
 
-  delProject.addEventListener("click", () => {
-    projectContainer.removeChild(projectDiv);
-    projectList.splice(projectList.indexOf(projectDiv), 1);
-  });
+let currentProject;
 
-  projectDiv.appendChild(delProject);
+newProject.addEventListener("click", () => {
+  currentProject = new Project(prompt("Project Name?"));
+  if (!!currentProject.name) {
+    projectList.push(currentProject);
+  }
+  currentProject.render();
+});
 
-  projectList.push(projectDiv);
+newTask.addEventListener("click", () => {
+  const task1 = new Task(prompt("Task Name?"));
+  if (!!task1.name) {
+    currentProject.addTask(task1);
+  }
+  task1.render();
+  // console.log(currentProject.taskList);
+  console.log(projectList);
+});
 
-  return projectDiv;
-}
+// const projectContainer = document.querySelector(".project-container");
+// const taskContainer = document.querySelector(".task-container");
 
-export function createTaskDiv() {
-  const taskDiv = document.createElement("div");
-  const inputTask = document.createElement("input");
-  const delTask = document.createElement("button");
-  const checkTask = document.createElement("input");
+// import Task from "./task";
+// import Project from "./project";
 
-  inputTask.className = "input-task";
-  checkTask.className = "check-task";
-  taskDiv.className = "task";
+// export function createProjectDiv() {
+//   const projectDiv = document.createElement("div");
+//   const delProject = document.createElement("button");
 
-  checkTask.type = "checkbox";
-  delTask.textContent = "X";
+//   projectDiv.className = "project";
+//   projectDiv.textContent = "New Project";
+//   delProject.textContent = "X";
 
-  delTask.addEventListener("click", () => {
-    taskContainer.removeChild(taskDiv);
-    taskList.splice(taskList.indexOf(taskDiv), 1);
-  });
+//   delProject.addEventListener("click", () => {
+//     projectContainer.removeChild(projectDiv);
+//     projectList.splice(projectList.indexOf(projectDiv), 1);
+//   });
 
-  taskDiv.appendChild(inputTask);
-  taskDiv.appendChild(delTask);
-  taskDiv.appendChild(checkTask);
+//   projectDiv.appendChild(delProject);
+//   projectContainer.appendChild(projectDiv);
 
-  taskList.push(taskDiv);
+//   projectList.push(projectDiv);
 
-  return taskDiv;
-}
+//   return projectDiv;
+// }
+
+// export function createTaskDiv() {
+//   const taskDiv = document.createElement("div");
+//   const inputTask = document.createElement("input");
+//   const delTask = document.createElement("button");
+//   const checkTask = document.createElement("input");
+
+//   inputTask.className = "input-task";
+//   checkTask.className = "check-task";
+//   taskDiv.className = "task";
+
+//   checkTask.type = "checkbox";
+//   delTask.textContent = "X";
+
+//   delTask.addEventListener("click", () => {
+//     taskContainer.removeChild(taskDiv);
+//     taskList.splice(taskList.indexOf(taskDiv), 1);
+//   });
+
+//   taskDiv.appendChild(inputTask);
+//   taskDiv.appendChild(delTask);
+//   taskDiv.appendChild(checkTask);
+
+//   taskList.push(taskDiv);
+
+//   return taskDiv;
+// }
 
 // export class Project {
 //   constructor(name) {
