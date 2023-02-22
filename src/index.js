@@ -11,9 +11,19 @@
 
 import "./style.css";
 import "./create-dom-elements";
-import { currentProject, projectList } from "./create-dom-elements";
+import {
+  projectList,
+  currentProject,
+  currentProjectNode,
+} from "./create-dom-elements";
 
-// console.log(projectList);
+console.log(projectList);
+
+// projectList.forEach((item) =>
+//   item.div.addEventListener("click", () => {
+//     console.log(item.taskList);
+//   })
+// );
 
 // import { Project, Task } from "./create-dom-elements";
 

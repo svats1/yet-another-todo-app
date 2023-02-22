@@ -9,9 +9,9 @@ export const newTask = document.querySelector(".add-new-task");
 const projectContainer = document.querySelector(".project-container");
 const taskContainer = document.querySelector(".task-container");
 
-let currentProject;
-let currentTaskList = [];
-let currentProjectNode;
+export let currentProject;
+export let currentTaskList = [];
+export let currentProjectNode;
 
 newProject.addEventListener("click", () => {
   //
@@ -21,15 +21,18 @@ newProject.addEventListener("click", () => {
   currentTaskList = [];
   if (!!currentProject.name) {
     projectList.push(currentProject);
-    currentProjectNode = currentProject.render();
+    currentProject.render();
+    // currentProject.div.addEventListener("click", () => {
+    //   console.log(currentProject.name);
+    // });
   }
 });
 
-if (!!currentProjectNode) {
-  currentProjectNode.addEventListener("click", () => {
-    console.log(currentProject.name);
-  });
-}
+// if (!!currentProjectNode) {
+//   currentProjectNode.addEventListener("click", () => {
+//     console.log(currentProject.name);
+//   });
+// }
 
 newTask.addEventListener("click", () => {
   const task1 = new Task(prompt("Task Name?"));
@@ -39,9 +42,15 @@ newTask.addEventListener("click", () => {
     currentTaskList.push(task1);
     currentProject.taskList = currentTaskList;
   }
-  console.log(currentProject);
-  console.log(currentTaskList);
+  //   console.log(currentProjectNode);
+  //   console.log(currentProject);
+  //   console.log(currentTaskList);
   console.log(projectList);
+  projectList.forEach((item) =>
+    item.div.addEventListener("click", () => {
+      console.log(item.taskList);
+    })
+  );
 });
 
 // console.log(projectList);
