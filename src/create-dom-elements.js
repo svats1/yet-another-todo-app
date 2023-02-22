@@ -10,31 +10,41 @@ const projectContainer = document.querySelector(".project-container");
 const taskContainer = document.querySelector(".task-container");
 
 let currentProject;
+let currentTaskList = [];
+let currentProjectNode;
 
 newProject.addEventListener("click", () => {
   //
   taskContainer.innerHTML = "";
   //
   currentProject = new Project(prompt("Project Name?"));
+  currentTaskList = [];
   if (!!currentProject.name) {
     projectList.push(currentProject);
-    const currentProjectNode = currentProject.render();
-    currentProjectNode.addEventListener("click", () => {
-      console.log("test");
-    });
+    currentProjectNode = currentProject.render();
   }
 });
+
+if (!!currentProjectNode) {
+  currentProjectNode.addEventListener("click", () => {
+    console.log(currentProject.name);
+  });
+}
 
 newTask.addEventListener("click", () => {
   const task1 = new Task(prompt("Task Name?"));
   if (!!task1.name) {
-    currentProject.addTask(task1);
+    // currentProject.addTask(task1);
     task1.render();
+    currentTaskList.push(task1);
+    currentProject.taskList = currentTaskList;
   }
-  // console.log(currentProject.taskList);
+  console.log(currentProject);
+  console.log(currentTaskList);
   console.log(projectList);
 });
 
+// console.log(projectList);
 // import Task from "./task";
 // import Project from "./project";
 
