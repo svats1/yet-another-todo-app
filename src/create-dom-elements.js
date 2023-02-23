@@ -22,17 +22,8 @@ newProject.addEventListener("click", () => {
   if (!!currentProject.name) {
     projectList.push(currentProject);
     currentProject.render();
-    // currentProject.div.addEventListener("click", () => {
-    //   console.log(currentProject.name);
-    // });
   }
 });
-
-// if (!!currentProjectNode) {
-//   currentProjectNode.addEventListener("click", () => {
-//     console.log(currentProject.name);
-//   });
-// }
 
 newTask.addEventListener("click", () => {
   const task1 = new Task(prompt("Task Name?"));
@@ -46,12 +37,13 @@ newTask.addEventListener("click", () => {
   //   console.log(currentProject);
   //   console.log(currentTaskList);
   console.log(projectList);
-  projectList.forEach((item) =>
-    item.div.addEventListener("click", () => {
-      console.log(item.taskList);
-    })
-  );
 });
+
+// projectList.forEach((item) =>
+//   item.div.addEventListener("click", () => {
+//     console.log(item.taskList);
+//   })
+// );
 
 // console.log(projectList);
 // import Task from "./task";

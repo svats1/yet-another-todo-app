@@ -24,6 +24,12 @@ export default class Project {
       projectList.splice(projectList.indexOf(projectDiv), 1);
     });
 
+    projectDiv.addEventListener("click", () => {
+      console.log(this.taskList);
+      // taskContainer.innerHTML = "";
+      // taskContainer.appendChild()
+    });
+
     projectDiv.appendChild(delProject);
     projectContainer.appendChild(projectDiv);
 
