@@ -1,17 +1,13 @@
 import Project from "./project";
 import Task from "./task";
 
-export let projectList = [];
-
-export const newProject = document.querySelector(".add-new-project");
-export const newTask = document.querySelector(".add-new-task");
-
-const projectContainer = document.querySelector(".project-container");
+const newProject = document.querySelector(".add-new-project");
+const newTask = document.querySelector(".add-new-task");
 const taskContainer = document.querySelector(".task-container");
 
-export let currentProject;
-export let currentTaskList = [];
-export let currentProjectNode;
+let currentProject;
+let currentTaskList = [];
+let projectList = [];
 
 function cleanupList(list) {
   for (const i in list) {
@@ -52,5 +48,7 @@ newTask.addEventListener("click", () => {
       currentProject.taskList = currentTaskList;
     }
     console.log(projectList);
+  } else {
+    alert("Create a new project first");
   }
 });

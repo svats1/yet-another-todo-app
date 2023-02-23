@@ -8,15 +8,16 @@ export default class Task {
     this.div;
   }
   render() {
+    // Create DOM nodes
     const taskDiv = document.createElement("div");
     const inputTask = document.createElement("input");
     const delTask = document.createElement("button");
     const checkTask = document.createElement("input");
 
+    // Qualify DOM nodes
     inputTask.className = "input-task";
     checkTask.className = "check-task";
     taskDiv.className = "task";
-
     checkTask.type = "checkbox";
     inputTask.value = this.name;
     delTask.textContent = "X";
@@ -27,6 +28,7 @@ export default class Task {
       checkTask.checked = true;
     }
 
+    // Checkbox event handler
     checkTask.addEventListener("click", () => {
       if (this.done === false) {
         // console.log("disabled");
@@ -41,17 +43,21 @@ export default class Task {
       }
     });
 
+    // Delete task event handler
     delTask.addEventListener("click", () => {
       taskContainer.removeChild(taskDiv);
       this.alive = false;
     });
 
+    // Compose task DOM element
     taskDiv.appendChild(inputTask);
     taskDiv.appendChild(delTask);
     taskDiv.appendChild(checkTask);
 
+    // Add to previous tasks in project
     taskContainer.appendChild(taskDiv);
 
+    // Pass created div as this task object's property
     this.div = taskDiv;
   }
 }
