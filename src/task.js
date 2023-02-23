@@ -21,13 +21,21 @@ export default class Task {
     inputTask.value = this.name;
     delTask.textContent = "X";
 
+    // State persistence if previously marked Done
+    if (this.done === true) {
+      inputTask.disabled = true;
+      checkTask.checked = true;
+    }
+
     checkTask.addEventListener("click", () => {
-      if (inputTask.disabled === false) {
-        console.log("disabled");
+      if (this.done === false) {
+        // console.log("disabled");
+        console.log(checkTask.checked);
         inputTask.disabled = true;
         this.done = true;
       } else {
-        console.log("enabled");
+        // console.log("enabled");
+        console.log(checkTask.checked);
         inputTask.disabled = false;
         this.done = false;
       }
