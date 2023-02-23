@@ -13,6 +13,14 @@ export let currentProject;
 export let currentTaskList = [];
 export let currentProjectNode;
 
+function cleanupList(list) {
+  for (const i in list) {
+    if (list[i].alive === false) {
+      list.splice(i, 1);
+    }
+  }
+}
+
 newProject.addEventListener("click", () => {
   //
   taskContainer.innerHTML = "";
@@ -21,6 +29,9 @@ newProject.addEventListener("click", () => {
   currentTaskList = [];
   //
   if (!!currentProject.name) {
+    // Cleanup project list
+    cleanupList(projectList);
+    // Render and add new one
     currentProject.render();
     projectList.push(currentProject);
   }
@@ -31,8 +42,12 @@ newTask.addEventListener("click", () => {
   const task1 = new Task(prompt("Task Name?"));
   //
   if (!!task1.name) {
+    // Cleanup task list
+    cleanupList(currentTaskList);
+    // Render and add new one
     task1.render();
     currentTaskList.push(task1);
+    // Pass this to current project for its selection handler
     currentProject.taskList = currentTaskList;
   }
   console.log(projectList);

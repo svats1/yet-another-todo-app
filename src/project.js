@@ -5,6 +5,7 @@ export default class Project {
   constructor(name) {
     this.name = name;
     this.taskList = [];
+    this.alive = true;
     this.div;
   }
   render() {
@@ -15,11 +16,12 @@ export default class Project {
     projectDiv.textContent = this.name;
     delProject.textContent = "X";
 
+    // Deletion handler
     delProject.addEventListener("click", () => {
       projectContainer.removeChild(projectDiv);
-      projectList.splice(projectList.indexOf(projectDiv), 1);
+      this.alive = false;
     });
-
+    // Selection handler
     projectDiv.addEventListener("click", () => {
       console.log(this.taskList);
       taskContainer.innerHTML = "";

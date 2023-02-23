@@ -4,6 +4,7 @@ export default class Task {
   constructor(name) {
     this.name = name;
     this.done = false;
+    this.alive = true;
     this.div;
   }
   render() {
@@ -24,22 +25,18 @@ export default class Task {
       if (inputTask.disabled === false) {
         console.log("disabled");
         inputTask.disabled = true;
-        // inputTask.value = "disabled";
-        // inputTask.style.textDecorationLine = "line-through";
         this.done = true;
       } else {
         console.log("enabled");
         inputTask.disabled = false;
-        // inputTask.value = "enabled";
-        // inputTask.textContent = this.name;
-        // inputTask.style.textDecoration = "none";
         this.done = false;
       }
     });
 
-    // delTask.addEventListener("click", () => {
-    //   taskContainer.removeChild(taskDiv);
-    // });
+    delTask.addEventListener("click", () => {
+      taskContainer.removeChild(taskDiv);
+      this.alive = false;
+    });
 
     taskDiv.appendChild(inputTask);
     taskDiv.appendChild(delTask);
