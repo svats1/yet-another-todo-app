@@ -39,16 +39,18 @@ newProject.addEventListener("click", () => {
 
 newTask.addEventListener("click", () => {
   //
-  const task1 = new Task(prompt("Task Name?"));
-  //
-  if (!!task1.name) {
-    // Cleanup task list
-    cleanupList(currentTaskList);
-    // Render and add new one
-    task1.render();
-    currentTaskList.push(task1);
-    // Pass this to current project for its selection handler
-    currentProject.taskList = currentTaskList;
+  if (projectList.length > 0) {
+    const task1 = new Task(prompt("Task Name?"));
+    //
+    if (!!task1.name) {
+      // Cleanup task list
+      cleanupList(currentTaskList);
+      // Render and add new one
+      task1.render();
+      currentTaskList.push(task1);
+      // Pass this to current project for its selection handler
+      currentProject.taskList = currentTaskList;
+    }
+    console.log(projectList);
   }
-  console.log(projectList);
 });
