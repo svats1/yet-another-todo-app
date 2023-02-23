@@ -7,10 +7,6 @@ export default class Project {
     this.taskList = [];
     this.div;
   }
-  addTask(task) {
-    this.taskList.push(task);
-  }
-  removeTask() {}
   render() {
     const projectDiv = document.createElement("div");
     const delProject = document.createElement("button");
@@ -26,17 +22,15 @@ export default class Project {
 
     projectDiv.addEventListener("click", () => {
       console.log(this.taskList);
-      // taskContainer.innerHTML = "";
-      // taskContainer.appendChild()
+      taskContainer.innerHTML = "";
+      this.taskList.forEach((item) => {
+        item.render();
+      });
     });
 
     projectDiv.appendChild(delProject);
     projectContainer.appendChild(projectDiv);
 
     this.div = projectDiv;
-
-    return projectDiv;
   }
 }
-
-// Project.prototype = Object.create({ name: "Samarth", age: "32" });

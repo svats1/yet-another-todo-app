@@ -21,11 +21,13 @@ export default class Task {
     delTask.textContent = "X";
 
     checkTask.addEventListener("click", () => {
-      if (inputTask.disabled === false) {
-        inputTask.disabled = true;
+      if (checkTask.disabled === false) {
+        // inputTask.disabled = true;
+        inputTask.style.textDecoration = "line-through";
         this.done = true;
       } else {
-        inputTask.disabled = false;
+        // inputTask.disabled = false;
+        inputTask.style.textDecoration = "none";
         this.done = false;
       }
     });
@@ -41,7 +43,5 @@ export default class Task {
     taskContainer.appendChild(taskDiv);
 
     this.div = taskDiv;
-
-    // return taskDiv;
   }
 }
