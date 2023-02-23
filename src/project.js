@@ -10,10 +10,14 @@ export default class Project {
   }
   render() {
     const projectDiv = document.createElement("div");
+    const projectName = document.createElement("button");
     const delProject = document.createElement("button");
 
     projectDiv.className = "project";
-    projectDiv.textContent = this.name;
+    projectName.className = "project-name";
+    delProject.className = "project-delete";
+
+    projectName.textContent = this.name;
     delProject.textContent = "X";
 
     // Deletion handler
@@ -21,8 +25,9 @@ export default class Project {
       projectContainer.removeChild(projectDiv);
       this.alive = false;
     });
+
     // Selection handler
-    projectDiv.addEventListener("click", () => {
+    projectName.addEventListener("click", () => {
       console.log(this.taskList);
       taskContainer.innerHTML = "";
       this.taskList.forEach((item) => {
@@ -30,7 +35,9 @@ export default class Project {
       });
     });
 
+    projectDiv.appendChild(projectName);
     projectDiv.appendChild(delProject);
+
     projectContainer.appendChild(projectDiv);
 
     this.div = projectDiv;

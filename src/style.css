@@ -43,6 +43,19 @@ body {
     align-items: center;
 }
 
+.project {
+    gap: 20px;
+}
+
+.project-delete {
+    padding: 20px;
+}
+
+.project-name {
+    /* border: 2px solid black; */
+    padding: 20px;
+}
+
 .project-container {
     display: flex;
     flex-direction: column;
@@ -72,6 +85,10 @@ body {
     align-items: center;
 }
 
+.task {
+    gap: 10px;
+}
+
 .task-container {
     display: flex;
     flex-direction: column;
@@ -80,6 +97,10 @@ body {
 
 .input-task {
     width: 90%;
+}
+
+.check-task {
+    scale: 1.5;
 }
 
 
