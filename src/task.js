@@ -8,7 +8,7 @@ export default class Task {
   }
   render() {
     const taskDiv = document.createElement("div");
-    const inputTask = document.createElement("div");
+    const inputTask = document.createElement("input");
     const delTask = document.createElement("button");
     const checkTask = document.createElement("input");
 
@@ -17,17 +17,22 @@ export default class Task {
     taskDiv.className = "task";
 
     checkTask.type = "checkbox";
-    inputTask.textContent = this.name;
+    inputTask.value = this.name;
     delTask.textContent = "X";
 
     checkTask.addEventListener("click", () => {
-      if (checkTask.disabled === false) {
-        // inputTask.disabled = true;
-        inputTask.style.textDecoration = "line-through";
+      if (inputTask.disabled === false) {
+        console.log("disabled");
+        inputTask.disabled = true;
+        // inputTask.value = "disabled";
+        // inputTask.style.textDecorationLine = "line-through";
         this.done = true;
       } else {
-        // inputTask.disabled = false;
-        inputTask.style.textDecoration = "none";
+        console.log("enabled");
+        inputTask.disabled = false;
+        // inputTask.value = "enabled";
+        // inputTask.textContent = this.name;
+        // inputTask.style.textDecoration = "none";
         this.done = false;
       }
     });

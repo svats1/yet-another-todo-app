@@ -17,4 +17,4 @@ import {
   currentProjectNode,
 } from "./create-dom-elements";
 
-console.log(projectList);
+// console.log(projectList);
