@@ -31,13 +31,9 @@ export default class Task {
     // Checkbox event handler
     checkTask.addEventListener("click", () => {
       if (this.done === false) {
-        // console.log("disabled");
-        console.log(checkTask.checked);
         inputTask.disabled = true;
         this.done = true;
       } else {
-        // console.log("enabled");
-        console.log(checkTask.checked);
         inputTask.disabled = false;
         this.done = false;
       }

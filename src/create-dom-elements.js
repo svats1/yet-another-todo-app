@@ -9,6 +9,12 @@ let currentProject;
 let currentTaskList = [];
 let projectList = [];
 
+// On load
+currentProject = new Project("Project 1");
+currentProject.render();
+projectList.push(currentProject);
+
+// Function to delete list items marked as dead (on deletion)
 function cleanupList(list) {
   for (const i in list) {
     if (list[i].alive === false) {
@@ -49,6 +55,6 @@ newTask.addEventListener("click", () => {
     }
     console.log(projectList);
   } else {
-    alert("Create a new project first");
+    alert("Create a new project");
   }
 });

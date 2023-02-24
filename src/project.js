@@ -23,7 +23,6 @@ export default class Project {
 
     // Select project event handler
     projectName.addEventListener("click", () => {
-      console.log(this.taskList);
       taskContainer.innerHTML = "";
       this.taskList.forEach((item) => {
         if (item.alive === true) {
