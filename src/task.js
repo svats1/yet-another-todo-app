@@ -29,7 +29,7 @@ export default class Task {
     dateTask.textContent = "Date";
     delTask.textContent = "X";
 
-    dateTask.value = "Due Date";
+    dateTask.value = "Set Due Date";
 
     // Date
 
