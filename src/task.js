@@ -24,12 +24,13 @@ export default class Task {
     checkTask.className = "check-task";
     dateTask.className = "date-task";
     taskDiv.className = "task";
+    delTask.className = "delete-task";
     checkTask.type = "checkbox";
     inputTask.value = this.name;
     dateTask.textContent = "Date";
     delTask.textContent = "X";
 
-    dateTask.value = "Set Due Date";
+    dateTask.placeholder = "Set Due Date";
 
     // Date
 
