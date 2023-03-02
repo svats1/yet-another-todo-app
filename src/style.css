@@ -107,6 +107,10 @@ body {
     align-items: center;
 }
 
+.add-new-task:active {
+    transform: scale(0.95);
+}
+
 .task {
     border: 2px solid red;
     margin-top: 20px;
