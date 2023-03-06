@@ -39,10 +39,6 @@ newProject.addEventListener("click", () => {
     // Render and add new one
     appState.currentProject.render();
     //
-    // appState.currentProject.div.addEventListener("click", () => {
-    //   console.log(appState.currentProject.name);
-    // });
-    //
     appState.projectList.push(appState.currentProject);
   }
 });
