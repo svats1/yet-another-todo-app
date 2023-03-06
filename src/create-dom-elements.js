@@ -5,6 +5,8 @@ const newProject = document.querySelector(".add-new-project");
 const newTask = document.querySelector(".add-new-task");
 const taskContainer = document.querySelector(".task-container");
 
+let test = "";
+
 let appState = {
   currentProject: null,
   currentTaskList: [],
