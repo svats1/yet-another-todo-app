@@ -5,6 +5,8 @@ const newProject = document.querySelector(".add-new-project");
 const newTask = document.querySelector(".add-new-task");
 const taskContainer = document.querySelector(".task-container");
 
+let test = "";
+
 let appState = {
   currentProject: null,
   currentTaskList: [],
@@ -38,10 +40,6 @@ newProject.addEventListener("click", () => {
     cleanupList(appState.projectList);
     // Render and add new one
     appState.currentProject.render();
-    //
-    // appState.currentProject.div.addEventListener("click", () => {
-    //   console.log(appState.currentProject.name);
-    // });
     //
     appState.projectList.push(appState.currentProject);
   }
